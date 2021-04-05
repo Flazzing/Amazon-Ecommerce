@@ -6,7 +6,7 @@ Documentation will be provided upon approval during week 2.
 
 ### `Week 1`
 
-Design architecture of the program, decide on which information to be on Docker, and which information to be on Firebase. In this design, customer data asset will be stored within Docker, and product information only stored within Firebase. \
+Design architecture of the program, decide on which information to be on Docker, and which information to be on Firebase. In this design, customer data asset will be stored within Docker, and product information only stored within Firebase. /
 
 [Click here to the architecture documentation]() for more information.
 
