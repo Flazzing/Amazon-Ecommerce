@@ -1,4 +1,4 @@
-# Amazon clone system with React, Docker, and Firebase
+# Amazon clone system with React, Docker, AWS and Firebase
 
 Documentation will be updated as project progresses.
 
