@@ -12,3 +12,5 @@ Design architecture of the program, decide on which information to be on Docker,
 
 ### `Week 2`
 
+Discussion Agenda \
+Approval for architecture, setup of docker, tips for file configuration.
