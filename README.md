@@ -8,7 +8,7 @@ Documentation will be provided upon approval during week 2.
 
 Design architecture of the program, decide on which information to be on Docker, and which information to be on Firebase. In this design, customer data asset will be stored within Docker, and product information only stored within Firebase. 
 
-[Click here]() for more information about the architecture.
+[Click here](https://github.com/Flazzing/Amazon-Ecommerce-with-AWS/blob/master/Architecture/architecture.png) for more information about the architecture.
 
 ### `Week 2`
 
