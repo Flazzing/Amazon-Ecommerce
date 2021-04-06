@@ -1,6 +1,6 @@
-# Amazon clone system with React, Docker, and Firebase
+# Amazon clone system with React, Docker, AWS and Firebase
 
-Documentation will be provided upon approval during week 2.
+Documentation will be updated as project progresses.
 
 ## Progress update Weekly
 
