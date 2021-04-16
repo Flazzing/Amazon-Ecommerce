@@ -1,23 +1,27 @@
-import './App.css';
+/** @jsxImportSource @emotion/react */
+
+import Header from "./components/header/app";
+import Home from "./components/home/home"
+import { css } from "@emotion/react";
+import "./app.css"
+
+const header_css = css `
+  padding: 0px;
+  margin: 0px;
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		
+		<div css={header_css}>
+			
+			<div><Header /> <Home / >
+
+			</div>
+		
+		</div>
+	
+	);
 }
 
 export default App;
