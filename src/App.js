@@ -12,15 +12,12 @@ const header_css = css `
 
 function App() {
 	return (
-		
 		<div css={header_css}>
-			
-			<div><Header /> <Home / >
-
+			<div>
+				<Header />
+				<Home />
 			</div>
-		
 		</div>
-	
 	);
 }
 
