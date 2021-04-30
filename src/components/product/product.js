@@ -7,7 +7,7 @@ import "./product.css";
 function Product() {
 	return (
 		<div className="product">
-			<div className="product_information">
+			<div className="product_name">
 				<p>This is a product called product</p>
 				<p className="product_price">
 					<small>$</small>
@@ -23,7 +23,7 @@ function Product() {
 				alt=""
 			/>
 
-			<button>Add to cart</button>
+			<button className="product_purchase_button">Add to cart</button>
 		</div>
 	);
 }
