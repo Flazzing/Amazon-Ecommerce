@@ -4,6 +4,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { Link } from "react-router-dom";
 
 const header_css = css`
   height: 60px;
@@ -84,10 +85,13 @@ const header_option_cart_totalItem = css`
 function header() {
   return (
     <div css={header_css}>
-      <img
-        css={header_logo}
-        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-      />
+      <Link to="/">
+        <img
+          css={header_logo}
+          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+        />
+      </Link>
+
       <div css={header_search}>
         <input css={header_search_input} type="text" />
         <SearchIcon css={header_search_icon} />
@@ -109,10 +113,12 @@ function header() {
           <span css={header_option_two}>Prime</span>
         </div>
 
-        <div css={header_option_cart}>
-          <ShoppingBasketIcon css={header_option_cart_icon} />
-          <span css={header_option_cart_totalItem}>0</span>
-        </div>
+        <Link to="/cart">
+          <div css={header_option_cart}>
+            <ShoppingBasketIcon css={header_option_cart_icon} />
+            <span css={header_option_cart_totalItem}>0</span>
+          </div>
+        </Link>
       </div>
     </div>
   );
