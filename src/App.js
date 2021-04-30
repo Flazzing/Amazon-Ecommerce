@@ -2,22 +2,25 @@
 
 import Header from "./components/header/app";
 import Home from "./components/home/home";
-import { css } from "@emotion/react";
-import "./app.css";
+import Cart from "./components/cart/cart";
 
-const header_css = css`
-  padding: 0px;
-  margin: 0px;
-`;
+import { css } from "@emotion/react";
+import "./App.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div css={header_css}>
-      <div>
-        <Header />
-        <Home />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/cart">
+          <Header />
+          <Cart />
+        </Route>
+        <Route path="/">
+          <Header /> <Home />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

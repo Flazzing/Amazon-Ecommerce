@@ -41,7 +41,13 @@ function home() {
         </div>
 
         <div css={home_row}>
-          <Product />
+          <Product
+            id="123"
+            name="Book from the tale"
+            price={29.99}
+            image="https://i5.walmartimages.com/asr/89f40468-7b86-489c-830a-ee392252fa71_1.2f20dcc3b143c5493efe1abbf81867a3.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff"
+            rating={5}
+          />
           <Product />
         </div>
         <div css={home_row}>
@@ -50,9 +56,6 @@ function home() {
           <Product />
         </div>
         <div css={home_row}>
-          <Product />
-          <Product />
-          <Product />
           <Product />
         </div>
       </div>
