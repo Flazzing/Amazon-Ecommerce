@@ -4,7 +4,12 @@ import { css } from "@emotion/react";
 import React from "react";
 import "./product.css";
 
-function Product({ id, name, image, price, rating }) {
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cart/action";
+
+function Product({ id, name, image, price, rating, inStock }) {
+  const dispatch = useDispatch();
+
   return (
     <div className="product">
       <div className="product_name">
@@ -24,7 +29,22 @@ function Product({ id, name, image, price, rating }) {
 
       <img src={image} alt="" />
 
-      <button className="product_purchase_button">Add to cart</button>
+      <button
+        className="product_purchase_button"
+        onClick={() => {
+          const item = {
+            id: id,
+            name: name,
+            image: image,
+            rating: rating,
+            inStock: inStock,
+          };
+          const cartProducts = addToCart(item, 1);
+          dispatch(cartProducts);
+        }}
+      >
+        Add to cart
+      </button>
     </div>
   );
 }

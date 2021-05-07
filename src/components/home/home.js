@@ -1,9 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
-import React from "react";
+import React, { useState } from "react";
 import { css } from "@emotion/react";
-
 import Product from "../product/product";
+import useProduct from "../product/productHooks/productReduxHook";
+
+import { useSelector, useDispatch } from "react-redux";
+import { getCartProducts } from "../../redux/shopping_product/selector";
 
 const home_background_image = css`
   width: 100%;
@@ -29,7 +32,16 @@ const home_row = css`
 
 const home_container = css``;
 
-function home() {
+function Home() {
+  useProduct();
+
+  const productList = useSelector(getCartProducts);
+
+  const [productCount, setproductCount] = useState([]);
+
+  console.log("selector");
+  console.log(productList);
+
   return (
     <div css={home_div}>
       <div css={home_container}>
@@ -39,7 +51,19 @@ function home() {
             alt="background"
           />
         </div>
-
+        <div css={home_row}>
+          {productList.map((product) => (
+            <Product
+              id={product.id}
+              name={product.productName}
+              price={product.price}
+              image={product.photoUrl}
+              rating={product.rating}
+              inStock={product.availableUnit}
+            />
+          ))}
+        </div>
+        // conditional rendering
         <div css={home_row}>
           <Product
             id="123"
@@ -50,17 +74,9 @@ function home() {
           />
           <Product />
         </div>
-        <div css={home_row}>
-          <Product />
-          <Product />
-          <Product />
-        </div>
-        <div css={home_row}>
-          <Product />
-        </div>
       </div>
     </div>
   );
 }
 
-export default home;
+export default Home;
