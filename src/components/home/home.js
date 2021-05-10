@@ -32,6 +32,15 @@ const home_row = css`
 
 const home_container = css``;
 
+function objectLength(productList) {
+  var size = 0,
+    key;
+  for (key in productList) {
+    if (productList.hasOwnProperty(key)) size++;
+  }
+  return size;
+}
+
 function Home() {
   useProduct();
 
@@ -42,6 +51,16 @@ function Home() {
   console.log("selector");
   console.log(productList);
 
+  var length = objectLength(productList);
+
+  var row_length = 4;
+  var total_row = length / 4;
+
+  var row1 = productList.slice(0, 4);
+  var row2 = productList.slice(4, 7);
+  var row3 = productList.slice(7, 11);
+  var row4 = productList.slice(11, 15);
+
   return (
     <div css={home_div}>
       <div css={home_container}>
@@ -51,9 +70,17 @@ function Home() {
             alt="background"
           />
         </div>
+
+        {/**
+         *
+         * Here lies the loop to get all product from firebase
+         *
+         **/}
+
         <div css={home_row}>
-          {productList.map((product) => (
+          {row1.map((product) => (
             <Product
+              key={product.id}
               id={product.id}
               name={product.productName}
               price={product.price}
@@ -63,16 +90,47 @@ function Home() {
             />
           ))}
         </div>
-        // conditional rendering
+
         <div css={home_row}>
-          <Product
-            id="123"
-            name="Book from the tale"
-            price={29.99}
-            image="https://i5.walmartimages.com/asr/89f40468-7b86-489c-830a-ee392252fa71_1.2f20dcc3b143c5493efe1abbf81867a3.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff"
-            rating={5}
-          />
-          <Product />
+          {row2.map((product) => (
+            <Product
+              key={product.id}
+              id={product.id}
+              name={product.productName}
+              price={product.price}
+              image={product.photoUrl}
+              rating={product.rating}
+              inStock={product.availableUnit}
+            />
+          ))}
+        </div>
+
+        <div css={home_row}>
+          {row3.map((product) => (
+            <Product
+              key={product.id}
+              id={product.id}
+              name={product.productName}
+              price={product.price}
+              image={product.photoUrl}
+              rating={product.rating}
+              inStock={product.availableUnit}
+            />
+          ))}
+        </div>
+
+        <div css={home_row}>
+          {row4.map((product) => (
+            <Product
+              key={product.id}
+              id={product.id}
+              name={product.productName}
+              price={product.price}
+              image={product.photoUrl}
+              rating={product.rating}
+              inStock={product.availableUnit}
+            />
+          ))}
         </div>
       </div>
     </div>
