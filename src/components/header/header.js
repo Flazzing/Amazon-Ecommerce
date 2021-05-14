@@ -5,6 +5,8 @@ import { css } from "@emotion/react";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getCartProducts } from "../../redux/cart/selector";
 
 const header_css = css`
   height: 60px;
@@ -82,7 +84,9 @@ const header_option_cart_totalItem = css`
   margin-right: 10px;
 `;
 
-function header() {
+function Header() {
+  const cartList = useSelector(getCartProducts);
+
   return (
     <div css={header_css}>
       <Link to="/">
@@ -116,7 +120,7 @@ function header() {
         <Link to="/cart">
           <div css={header_option_cart}>
             <ShoppingBasketIcon css={header_option_cart_icon} />
-            <span css={header_option_cart_totalItem}>0</span>
+            <span css={header_option_cart_totalItem}>{cartList.length}</span>
           </div>
         </Link>
       </div>
@@ -124,4 +128,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;

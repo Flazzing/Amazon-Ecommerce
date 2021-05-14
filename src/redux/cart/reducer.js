@@ -1,23 +1,25 @@
 import { combineReducers } from "redux";
 import { RECEIVE_PRODUCTS, UPDATE_PRODUCTS } from "./action";
 
-function cartReducer(state = [], action) {
+export function cartReducer(state = [], action) {
+  console.log(state);
   switch (action.type) {
     case `ADD_TO_CART`:
-      console.log(reducer);
+      return [
+        {
+          id: action.product.id,
+          name: action.product.name,
+          image: action.product.image,
+          rating: action.product.rating,
+          price: action.product.price,
+          quantity: action.product.itemOrderQuantity,
+          inStock: action.product.inStock,
+        },
 
-      return {
         ...state,
-        cart: [...state.cart, action.item],
-      };
+      ];
 
     default:
       return state;
   }
 }
-
-const rootReducer = combineReducers({
-  cart_productList: cartReducer,
-});
-
-export default rootReducer;

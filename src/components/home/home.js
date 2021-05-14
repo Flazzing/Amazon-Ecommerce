@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 import Product from "../product/product";
 import useProduct from "../product/productHooks/productReduxHook";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { getCartProducts } from "../../redux/shopping_product/selector";
 
 const home_background_image = css`
@@ -48,9 +48,6 @@ function Home() {
 
   const [productCount, setproductCount] = useState([]);
 
-  console.log("selector");
-  console.log(productList);
-
   var length = objectLength(productList);
 
   var row_length = 4;
@@ -86,7 +83,7 @@ function Home() {
               price={product.price}
               image={product.photoUrl}
               rating={product.rating}
-              inStock={product.availableUnit}
+              inStock={product.inStock}
             />
           ))}
         </div>
@@ -100,7 +97,7 @@ function Home() {
               price={product.price}
               image={product.photoUrl}
               rating={product.rating}
-              inStock={product.availableUnit}
+              inStock={product.inStock}
             />
           ))}
         </div>
@@ -114,7 +111,7 @@ function Home() {
               price={product.price}
               image={product.photoUrl}
               rating={product.rating}
-              inStock={product.availableUnit}
+              inStock={product.inStock}
             />
           ))}
         </div>
@@ -128,7 +125,7 @@ function Home() {
               price={product.price}
               image={product.photoUrl}
               rating={product.rating}
-              inStock={product.availableUnit}
+              inStock={product.inStock}
             />
           ))}
         </div>

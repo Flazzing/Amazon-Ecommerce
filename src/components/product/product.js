@@ -1,14 +1,23 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from "@emotion/react";
-import React from "react";
+import React, { useState } from "react";
 import "./product.css";
 
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cart/action";
+import { TextRotationAngleup } from "@material-ui/icons";
 
 function Product({ id, name, image, price, rating, inStock }) {
   const dispatch = useDispatch();
+
+  var i = 0;
+  var x = parseInt(rating);
+
+  var ratingStar = [];
+  for (var b = 0; b < x; b++) {
+    ratingStar.push(<p key={i++}>⭐</p>);
+  }
 
   return (
     <div className="product">
@@ -18,13 +27,7 @@ function Product({ id, name, image, price, rating, inStock }) {
           <small>$</small>
           <strong>{price}</strong>
         </p>
-        <div className="product_rating">
-          {Array(rating)
-            .fill()
-            .map((_, i) => (
-              <p>⭐</p>
-            ))}
-        </div>
+        <div className="product_rating">{ratingStar}</div>
       </div>
 
       <img src={image} alt="" />
@@ -36,6 +39,7 @@ function Product({ id, name, image, price, rating, inStock }) {
             id: id,
             name: name,
             image: image,
+            price: price,
             rating: rating,
             inStock: inStock,
           };

@@ -1,8 +1,15 @@
 import React from "react";
 import "./cart.css";
 import Subtotal from "./subtotal/subtotal";
+import { useSelector } from "react-redux";
+import { getCartProducts } from "../../redux/cart/selector";
+import CartItem from "./cartItem/cartItem";
+function Cart() {
+  const cartList = useSelector(getCartProducts);
 
-function cart() {
+  console.log("CartList");
+  console.log(cartList);
+
   return (
     <div className="cart">
       <div className="cart_left">
@@ -14,7 +21,15 @@ function cart() {
 
         <div>
           <h2 className="cart_title">Shopping Cart</h2>
-          {/*CartItem*/}
+          {cartList.map((cartItem) => (
+            <CartItem
+              id={cartItem.id}
+              name={cartItem.name}
+              image={cartItem.image}
+              price={cartItem.price}
+              rating={cartItem.rating}
+            />
+          ))}
         </div>
       </div>
 
@@ -26,4 +41,4 @@ function cart() {
   );
 }
 
-export default cart;
+export default Cart;
