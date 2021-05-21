@@ -4,11 +4,14 @@ import Subtotal from "./subtotal/subtotal";
 import { useSelector } from "react-redux";
 import { getCartProducts } from "../../redux/cart/selector";
 import CartItem from "./cartItem/cartItem";
+
 function Cart() {
   const cartList = useSelector(getCartProducts);
 
-  console.log("CartList");
-  console.log(cartList);
+  var totalPrice = 0;
+  cartList.forEach((cartItem) => {
+    totalPrice += parseFloat(cartItem.price) * parseInt(cartItem.quantity);
+  });
 
   return (
     <div className="cart">
@@ -37,7 +40,9 @@ function Cart() {
 
       <div className="cart_right">
         <Subtotal />
-        <h2 className="cart_price_total">Total price: </h2>
+        <h2 className="cart_price_total">
+          Total price: {totalPrice.toFixed(2)}
+        </h2>
       </div>
     </div>
   );
