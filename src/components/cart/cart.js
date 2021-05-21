@@ -23,10 +23,12 @@ function Cart() {
           <h2 className="cart_title">Shopping Cart</h2>
           {cartList.map((cartItem) => (
             <CartItem
+              key={cartItem.id}
               id={cartItem.id}
               name={cartItem.name}
               image={cartItem.image}
               price={cartItem.price}
+              quantity={cartItem.quantity}
               rating={cartItem.rating}
             />
           ))}

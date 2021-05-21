@@ -1,7 +1,11 @@
 import React from "react";
 import "./cartItem.css";
+import { useDispatch } from "react-redux";
+import { removeCartitem } from "../../../redux/cart/action";
 
-function CartItem({ id, name, image, price, rating }) {
+function CartItem({ id, name, image, price, quantity, rating }) {
+  const dispatch = useDispatch();
+
   var i = 0;
   return (
     <div key={id} className="cartItem">
@@ -12,6 +16,10 @@ function CartItem({ id, name, image, price, rating }) {
           <small>$</small>
           <strong>{price}</strong>
         </p>
+        <p className="cartItem_price">
+          <small>Total Quantity: </small>
+          <strong>{quantity}</strong>
+        </p>
         <div className="cartItem_rating">
           {Array(parseInt(rating))
             .fill()
@@ -19,7 +27,14 @@ function CartItem({ id, name, image, price, rating }) {
               <p key={i++}>⭐</p>
             ))}
         </div>
-        <button>Remove from Cart</button>
+        <button
+          onClick={() => {
+            const removeItem = removeCartitem(id, quantity);
+            dispatch(removeItem);
+          }}
+        >
+          Remove from Cart
+        </button>
       </div>
     </div>
   );

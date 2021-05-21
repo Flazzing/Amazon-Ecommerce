@@ -1,4 +1,5 @@
 export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
 
 export function createCartItem(id, name, image, price, rating, quantity) {
   return {
@@ -35,5 +36,13 @@ export function addToCart(product, itemOrderQuantity) {
   return {
     type: ADD_TO_CART,
     product,
+  };
+}
+
+export function removeCartitem(id, deleteQuantity) {
+  return {
+    type: REMOVE_CART_ITEM,
+    id,
+    deleteQuantity,
   };
 }
