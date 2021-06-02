@@ -2,14 +2,25 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { getCartProducts } from "../../redux/cart/selector";
 import CartItem from "../cart/cartItem/cartItem";
-import "./payment.css";
+import "./checkout.css";
 
-function Payment() {
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+
+function Checkout() {
   const cartList = useSelector(getCartProducts);
+
+  const stripe = useStripe();
+  const Elements = useElements();
+
+  const handleSubmit = (e) => {};
+
+  const handleCHange = (e) => {};
 
   return (
     <div className="payment">
       <div className="paymentContainer">
+        <h1></h1>
+
         <div className="paymentSection">
           <div className="paymentTitle">
             <h3>Delivery Address</h3>
@@ -46,10 +57,14 @@ function Payment() {
           <h3>Payment method</h3>
         </div>
 
-        <div className="paymentDetails"></div>
+        <div className="paymentDetails">
+          <form>
+            <CardElement />
+          </form>
+        </div>
       </div>
     </div>
   );
 }
 
-export default Payment;
+export default Checkout;

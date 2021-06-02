@@ -13,6 +13,8 @@
   flex: 0.2;
 }
 
-.paymentAddress .paymentItems {
+.paymentAddress,
+.paymentItems,
+.paymentDetails {
   flex: 0.8;
 }
