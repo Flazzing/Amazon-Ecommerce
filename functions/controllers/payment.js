@@ -3,7 +3,9 @@ const express = require("express");
 const cors = require("cors");
 
 const admin = require("firebase-admin");
-const stripe = require("stripe")("");
+const stripe = require("stripe")(
+  "sk_test_51IxnhtE88LGtjUOWJNFnIb3XrZXrgB32yidQqvBdgKJAiv72dy4NnXL9J0YICoguAQQw9apv9Blkpd108Gk5c8Ic00B9z9gDwl"
+);
 
 const db = admin.firestore();
 
