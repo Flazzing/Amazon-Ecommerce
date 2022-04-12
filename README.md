@@ -34,3 +34,10 @@ Payment processing is implemented, and basket bug pricing is fixed.
 
 Progress update \
 Brush up some CSS, and everything looks good. Due to shortage of time, docker section is yet to be implemented. Overall, the barebone feature is there, and should serve a good enough reference of my work.
+
+Note \ 
+The program is not entirely working if you just deploy it entirely. This is due to the fact that I didn't want to deploy the payment api endpoint on firebase, instead I used a local hose. 
+
+Instruction \
+To run this program you need to host the firebase function folder by firebase serve, 
+At the same time, host the front end locally.
