@@ -17,11 +17,8 @@ productApp.get("/", async (req, res) => {
 			    With many customer, retrieve of data is going to be tremendously expensive.
 		
 		Note: This is an endpoint specifically for database to stay up to date with the firebase.
-
 		Note: Pagination is not possible with Firestore because there is no count query within firestore API 
 		Source:  https://stackoverflow.com/questions/55786571/paginate-with-firestore
-
-
 	*/
 
   const snapshot = await db.collection("products").get();

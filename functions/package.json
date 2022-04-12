@@ -10,17 +10,19 @@
     "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "12"
+    "node": "16"
   },
   "main": "index.js",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "firebase-admin": "^9.2.0",
-    "firebase-functions": "^3.11.0"
+    "express": "^4.17.2",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1",
+    "strip-js": "^1.2.0",
+    "stripe": "^8.195.0"
   },
   "devDependencies": {
-    "eslint": "^7.6.0",
+    "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
     "firebase-functions-test": "^0.2.0"
   },

@@ -1,4 +1,4 @@
 module.exports = {
-  ...require("./controllers/product"),
-  ...require("./controllers/payment"),
+  ...require("./controller/product"),
+  ...require("./controller/payment"),
 };
